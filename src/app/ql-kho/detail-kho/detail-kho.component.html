@@ -1,0 +1,27 @@
+<div class="header-container">
+    <h1>Thông tin chi tiết Kho</h1>
+</div>
+<form [formGroup]="DetailForm">
+
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="Ngành nghề" formControlName="idNganhNghe">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="Chi nhánh" formControlName="idChiNhanh">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="Tên kho" formControlName="tenKho">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="Ngày tạo" formControlName="ngayTao">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="Ngày cập nhật" formControlName="ngayCapNhat">
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit" (click)="closeDetail()">Quay lại</button>
+</form>

@@ -1,0 +1,64 @@
+<div class="header-container">
+  <h1>Sửa thông tin người dùng</h1>
+</div>
+<form [formGroup]="EditForm" >
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Tài khoản " formControlName="userName">
+    <mat-error *ngIf="EditForm.get('userName')?.hasError('required')">
+      Người dùng không được để trống
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <input matInput type="password" placeholder="Mật khẩu" formControlName="password">
+    <mat-error *ngIf="EditForm.get('password')?.hasError('required')">
+      Người dùng không được để trống
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Tên người dùng" formControlName="tenND">
+    <mat-error *ngIf="EditForm.get('tenND')?.hasError('required')">
+      Người dùng không được để trống
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Email" formControlName="email">
+    <mat-error *ngIf="EditForm.get('email')?.hasError('required')">
+      Người dùng không được để trống
+    </mat-error>
+  </mat-form-field>
+  
+  <button mat-raised-button color="primary" type="submit" (click)="onSubmit()">Cập nhật</button>
+</form>
+
+
+
+
+<!-- <div>
+  <h2 mat-dialog-title>Sửa người dùng</h2>
+  <mat-dialog-content class="mat-typography" style="background-color: #fff;">
+    <form [formGroup]="EditForm">
+      <mat-form-field>
+        <input matInput placeholder="Tài khoản " formControlName="userName">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput type="password" placeholder="Mật khẩu" formControlName="password">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="Tên người dùng" formControlName="tenND">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="Email" formControlName="email">
+      </mat-form-field>
+    </form>
+  </mat-dialog-content>
+  <mat-dialog-actions align="end" >
+    <button mat-button (click)="closeEdit()">Hủy</button>
+    <button mat-button (click)="onSubmit()">Cập nhật</button>
+  </mat-dialog-actions>
+</div> -->

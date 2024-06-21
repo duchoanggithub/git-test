@@ -1,0 +1,43 @@
+<div class="header-container">
+  <h1>Sửa thông tin nhà cung cấp</h1>
+</div>
+<form [formGroup]="EditForm">
+
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Tên nhà cung cấp" formControlName="tenNCC">
+    <mat-error *ngIf="EditForm.get('tenNCC')?.hasError('required')">
+      Nhà cung cấp không được để trống
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Người liên hệ" formControlName="nguoiLienHe">
+    <mat-error *ngIf="EditForm.get('nguoiLienHe')?.hasError('required')">
+      Nhà cung cấp không được để trống
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Số điện thoại" formControlName="sdtNguoiLienHe">
+    <mat-error *ngIf="EditForm.get('sdtNguoiLienHe')?.hasError('required')">
+      Nhà cung cấp không được để trống
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Địa chỉ" formControlName="diaChi">
+    <mat-error *ngIf="EditForm.get('diaChi')?.hasError('required')">
+      Nhà cung cấp không được để trống
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Email" formControlName="email">
+    <mat-error *ngIf="EditForm.get('email')?.hasError('required')">
+      Nhà cung cấp không được để trống
+    </mat-error>
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" type="submit" (click)="onSubmit()">Cập nhật</button>
+  <button mat-raised-button color="warn" type="submit" (click)="closeEdit()">Quay lại</button>
+</form>

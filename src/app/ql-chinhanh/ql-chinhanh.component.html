@@ -1,0 +1,40 @@
+<div class="head-title">
+  <h1>Danh sách chi nhánh</h1>
+  <button mat-fab color="accent" (click)="OpenDialog()">
+    <mat-icon>add</mat-icon>
+  </button>
+</div>
+<div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>STT</th>
+        <th>Tên CN</th>
+        <th>Ngày tạo</th>
+        <th>Ngày cập nhật</th>
+        <th>Chức năng</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let chinhanh of chinhanhs; let i = index">
+        <td scope="row">{{ i + 1 }}</td>
+        <td>{{ chinhanh.tenCN }}</td>
+        <td>{{ chinhanh.ngayTao }}</td>
+        <td>{{ chinhanh.ngayCapNhat }}</td>
+        <td>
+          <button class="button-icon" mat-icon-button matTooltip="primary" color="primary"
+            [routerLink]="['./edit', chinhanh.id]">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button class="button-icon" mat-icon-button matTooltip="warn" color="warn" (click)="deleteCN(chinhanh.id)">
+            <mat-icon>delete</mat-icon>
+          </button>
+          <button class="button-icon" mat-icon-button matTooltip="accent" color="black"
+            [routerLink]="['./detail', chinhanh.id]">
+            <mat-icon>info</mat-icon>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,21 @@
+<div class="header-container">
+    <h1>Sửa thông tin kho</h1>
+  </div>
+  <form [formGroup]="EditForm" >
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="Chi nhánh" formControlName="idChiNhanh">
+        <mat-error *ngIf="EditForm.get('idChiNhanh')?.hasError('required')">
+          Kho không được để trống
+        </mat-error>
+      </mat-form-field>
+  
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Tên kho" formControlName="tenKho">
+      <mat-error *ngIf="EditForm.get('tenKho')?.hasError('required')">
+        Kho không được để trống
+      </mat-error>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit" (click)="onSubmit()">Cập nhật</button>
+    <button mat-raised-button color="warn" type="submit" (click)="closeEdit()">Quay lại</button>
+  </form>

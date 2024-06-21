@@ -1,0 +1,53 @@
+<div class="head-title">
+    <h1>Danh sách người dùng</h1>
+    <button mat-fab color="accent" (click)="OpenDialog()">
+        <mat-icon>add</mat-icon>
+    </button>
+</div>
+
+<table class="table">
+    <div>
+        <thead>
+            <tr>
+                <th>STT</th>
+                <th>RoleID</th>
+                <th>Tài khoản</th>
+                <th>Mật khẩu</th>
+                <th>Email</th>
+                <th>Tên người dùng</th> 
+                <th>Ngày tạo</th>
+                <th>Ngày cập nhật</th>
+                <th>Chức năng</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users; let i = index">
+                <td  scope="row">{{i + 1}}</td>
+                <td >{{user.roleName}}</td>
+                <td >{{user.userName}}</td>
+                <td >{{user.password}}</td>
+                <td >{{user.email}}</td>
+                <td >{{user.tenND}}</td>
+                <td >{{user.ngayTao}}</td>
+                <td >{{user.ngayCapNhat}}</td>
+                <td>
+                    <button class="button-icon" mat-icon-button matTooltip="primary" color="primary"
+                    [routerLink]="['sua-user', user.id]">
+                        <mat-icon>edit</mat-icon>
+                    </button>
+                    <button class="button-icon" mat-icon-button matTooltip="warn" color="warn" (click)="deleteUser(user.id)">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                    <button class="button-icon" mat-icon-button matTooltip="accent" color="black"
+                        (click)="getUserById()">
+                        <mat-icon>info</mat-icon>
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+        <!-- <mat-paginator [length]="users.length" [pageSize]="5"
+             [pageSizeOptions]="[5, 10, 20]" aria-label="Select page" showFirstLastButtons
+             (page)="onPageChange($event)">
+        </mat-paginator> -->
+    </div>
+</table>

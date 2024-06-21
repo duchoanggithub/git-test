@@ -1,0 +1,57 @@
+<div class="header-container">
+  <h1>Sửa thông tin sản phẩm</h1>
+</div>
+<form [formGroup]="EditForm">
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Chọn tệp</mat-label>
+    <input matInput placeholder="Chọn tệp" readonly [value]="addSPForm.get('imgSanPham')?.value">
+    <mat-icon matSuffix (click)="fileInput.click()">attach_file</mat-icon>
+    <input type="file" #fileInput style="display:none;" (change)="onFileSelected($event)">
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Nhóm sản phẩm" formControlName="idNhomSanPham">
+    <mat-error *ngIf="EditForm.get('idNhomSanPham')?.hasError('required')">
+      Nhà cung cấp không được để trống
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Tên sản phẩm" formControlName="tenSp">
+    <mat-error *ngIf="EditForm.get('tenSp')?.hasError('required')">
+      Nhà cung cấp không được để trống
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Giá sản phẩm" formControlName="giaSP">
+    <mat-error *ngIf="EditForm.get('giaSP')?.hasError('required')">
+      Nhà cung cấp không được để trống
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Giá nhập" formControlName="giaNhapVao">
+    <mat-error *ngIf="EditForm.get('giaNhapVao')?.hasError('required')">
+      Nhà cung cấp không được để trống
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Nhà cung cấp" formControlName="idNhaCungCap">
+    <mat-error *ngIf="EditForm.get('idNhaCungCap')?.hasError('required')">
+      Nhà cung cấp không được để trống
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Mô tả" formControlName="mota">
+    <mat-error *ngIf="EditForm.get('mota')?.hasError('required')">
+      Nhà cung cấp không được để trống
+    </mat-error>
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" type="submit" (click)="onSubmit()">Cập nhật</button>
+  <button mat-raised-button color="warn" type="submit" (click)="closeEdit()">Quay lại</button>
+</form>

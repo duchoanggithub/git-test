@@ -1,0 +1,49 @@
+<div class="head-title">
+    <h1>Danh sách Nhà cung cấp</h1>
+    <button mat-fab color="accent" (click)="OpenDialog()">
+        <mat-icon>add</mat-icon>
+    </button>
+</div>
+<div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>STT</th>
+                <th>Tên NCC</th>
+                <th>Người liên hệ</th>
+                <th>Số điện thoại</th>
+                <th>Địa chỉ</th>
+                <th>Email</th>
+                <th>Ngày tạo</th>
+                <th>Ngày cập nhật</th>
+                <th>Chức năng</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let nccSV of nccs; let i = index">
+                <td scope="row">{{ i + 1 }}</td>
+                <td>{{ nccSV.tenNCC }}</td>
+                <td>{{ nccSV.nguoiLienHe }}</td>
+                <td>{{ nccSV.sdtNguoiLienHe }}</td>
+                <td>{{ nccSV.diaChi }}</td>
+                <td>{{ nccSV.email }}</td>
+                <td>{{ nccSV.ngayTao }}</td>
+                <td>{{ nccSV.ngayCapNhat }}</td>
+                <td>
+                    <button class="button-icon" mat-icon-button matTooltip="primary" color="primary"
+                        [routerLink]="['./edit', nccSV.id]">
+                        <mat-icon>edit</mat-icon>
+                    </button>
+                    <button class="button-icon" mat-icon-button matTooltip="warn" color="warn"
+                        (click)="deleteNCC(nccSV.id)">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                    <button class="button-icon" mat-icon-button matTooltip="accent" color="black"
+                        [routerLink]="['./detail', nccSV.id]">
+                        <mat-icon>info</mat-icon>
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

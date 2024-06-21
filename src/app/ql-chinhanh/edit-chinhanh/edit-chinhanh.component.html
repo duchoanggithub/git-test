@@ -1,0 +1,16 @@
+<div class="header-container">
+    <h1>Sửa thông tin người dùng</h1>
+  </div>
+  <form [formGroup]="EditForm" >
+
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Tên chi nhánh" formControlName="tenCN">
+      <mat-error *ngIf="EditForm.get('tenCN')?.hasError('required')">
+        Người dùng không được để trống
+      </mat-error>
+    </mat-form-field>
+    
+    <button mat-raised-button color="primary" type="submit" (click)="onSubmit()">Cập nhật</button>
+    <button mat-raised-button color="warn" type="submit" (click)="closeEdit()">Quay lại</button>
+  </form>
+  

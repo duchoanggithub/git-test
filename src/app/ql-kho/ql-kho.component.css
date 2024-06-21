@@ -1,0 +1,58 @@
+.head-title{
+    display: flex;
+    align-items: center;
+
+    button{
+        transform: scale(0.75);
+        margin-right: 140px;
+        margin-bottom: 10px;
+    }
+}
+h1{
+    flex-grow: 1;
+}
+
+.mat-mdc-table tbody,
+.mat-mdc-table tfoot,
+.mat-mdc-table thead, 
+.mat-mdc-cell, 
+.mat-mdc-footer-cell, 
+.mat-mdc-header-row, 
+.mat-mdc-row, 
+.mat-mdc-footer-row, 
+.mat-mdc-table 
+.mat-mdc-header-cell{
+    background: #fff;
+    color: #000;
+}
+
+.mat-mdc-paginator{
+    background: #fff;
+    color: #000;
+
+    
+}
+
+.mat-mdc-icon-button[disabled] .mat-mdc-paginator-icon {
+    fill: #000;
+}
+.mat-elevation-z0 {
+    background-color: white; /* Đặt màu nền của bảng là màu trắng */
+  }
+  
+  .mat-table {
+    background-color: white; /* Đặt màu nền của bảng là màu trắng */
+  }
+  
+  /* Tùy chỉnh màu nền cho các hàng của bảng */
+  .mat-row,
+  .mat-header-row {
+    background-color: white;
+  }
+  
+  /* Tùy chỉnh màu nền cho các ô (cell) trong bảng */
+  .mat-cell,
+  .mat-header-cell {
+    background-color: white;
+  }
+  

@@ -1,0 +1,26 @@
+<div>
+  <h2 mat-dialog-title>Thêm người dùng mới</h2>
+  <mat-dialog-content class="mat-typography" style="background-color: #fff;">
+    <form [formGroup]="addUserForm">
+      <mat-form-field>
+        <input matInput placeholder="Tài khoản " formControlName="userName">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput type="password" placeholder="Mật khẩu" formControlName="password">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="Tên người dùng" formControlName="tenND">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="Email" formControlName="email">
+      </mat-form-field>
+    </form>
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <button mat-button (click)="onNoClick()">Hủy</button>
+    <button mat-button (click)="onSubmit()">Thêm</button>
+  </mat-dialog-actions>
+</div>

@@ -1,0 +1,58 @@
+<div class="head-title">
+    <h1>Danh sách sản phẩm</h1>
+    <button mat-fab color="accent" (click)="OpenDialog()">
+        <mat-icon>add</mat-icon>
+    </button>
+</div>
+
+<table class="table">
+    <div>
+        <thead>
+            <tr>
+                <th>STT</th>
+                <th>Ảnh sản phẩm</th>
+                <th>Nhóm sản phẩm</th>
+                <th>Tên sản phẩm</th>
+                <th>Giá sản phẩm</th>
+                <th>Giá nhập</th>
+                <th>Nhà Cung cấp</th>
+                <th>Mô tả</th>
+                <th>Ngày tạo</th>
+                <th>Ngày cập nhật</th>
+                <th>Chức năng</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let spSV of sps; let i = index">
+                <td scope="row">{{i + 1}}</td>
+                <img style="max-height: 100px; border-radius: 10px;" [src]="'../../assets/' + spSV.imgSanPham" alt="Hình ảnh của {{ spSV.imgSanPham }}">
+                <td>{{spSV.idNhomSanPham}}</td>
+                <td>{{spSV.tenSp}}</td>
+                <td>{{spSV.giaSP}}</td>
+                <td>{{spSV.giaNhapVao}}</td>
+                <td>{{spSV.idNhaCungCap}}</td>
+                <td>{{spSV.mota}}</td>
+                <td>{{spSV.ngayTao}}</td>
+                <td>{{spSV.ngayCapNhat}}</td>
+                <td>
+                    <button class="button-icon" mat-icon-button matTooltip="primary" color="primary"
+                        [routerLink]="['edit', spSV.id]">
+                        <mat-icon>edit</mat-icon>
+                    </button>
+                    <button class="button-icon" mat-icon-button matTooltip="warn" color="warn"
+                        (click)="deleteSP(spSV.id)">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                    <button class="button-icon" mat-icon-button matTooltip="accent" color="black"
+                        [routerLink]="['detail', spSV.id]">
+                        <mat-icon>info</mat-icon>
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+        <!-- <mat-paginator [length]="users.length" [pageSize]="5"
+             [pageSizeOptions]="[5, 10, 20]" aria-label="Select page" showFirstLastButtons
+             (page)="onPageChange($event)">
+        </mat-paginator> -->
+    </div>
+</table>
